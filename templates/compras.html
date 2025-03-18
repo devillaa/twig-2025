@@ -1,7 +1,12 @@
 {% extends "_base.html" %}
 
 {% block conteudo %}
-
 Página de compras
+
+<ul>
+    {% for compra in compras %}
+        <li>{{ compra.item }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
