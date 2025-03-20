@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block conteudo %} 
+
+    <form action="compras_editar.php" method="post">
+        <input type="hidden" name="id" value="{{ id }}">
+        <input type="text" name="new" placeholder="Digite o novo nome do item">
+        <input type="submit" value="Confirmar edição">
+    </form>
+
+{% endblock %}
