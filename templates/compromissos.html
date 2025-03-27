@@ -1,29 +1,25 @@
-{% extends '_base.html' %}
-
-{% block conteudo %}
+{% extends '_base.html' %} {% block conteudo %}
 
 <form action="addCompromisso.php" method="POST">
-    
-    <label for="titulo">Título</label>
-    <input type="text" name="titulo" required> <br> <br>
-    <label for="titulo">Data</label>
-    <input type="date" name="data" required> <br> <br> 
+  <label for="titulo">Título</label>
+  <input type="text" name="titulo" required /> <br />
+  <br />
+  <label for="titulo">Data</label>
+  <input type="date" name="data" required /> <br />
+  <br />
 
-    <button type="submit">Adicionar</button>
+  <button type="submit">Adicionar</button>
 
-    {% for compromisso in compromissos %}
-        <div>
-            <ul>
-                <li>Título: {{ compromisso.titulo }}</li>
-                <li>Data: {{ compromisso.data }}</li>
-                <a href="excluirCompromisso.php?id={{compromisso.id}}">Excluir</a>
-                <a href="compromissoEditar.php?id={{compromisso.id}}">Editar</a>
-            </ul>
-        </div>
-    {% endfor %}
-
+  {% for compromisso in compromissos %}
+  <div>
+    <ul>
+      <li>Título: {{ compromisso.titulo }}</li>
+      <li>Data: {{ compromisso.data }}</li>
+      <a href="excluirCompromisso.php?id={{compromisso.id}}">Excluir</a>
+      <a href="compromissoEditar.php?id={{compromisso.id}}">Editar</a>
+    </ul>
+  </div>
+  {% endfor %}
 </form>
-
-
 
 {% endblock %}

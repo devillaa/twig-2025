@@ -2,10 +2,12 @@
 
 {% block conteudo %} 
 
-    <form action="compromisso_editar.php" method="post">
+
+    <form action="compromissoEditar.php" method="post">
         <input type="hidden" name="id" value="{{ id }}">
         <input type="text" name="newtitulo" placeholder="Digite o novo título do compromisso">
-        <input type="date" name="newdata">
+        <input type="date" name="newdata" value="{{data}}">
+        <button type="submit">Confirmar edição</button>
     </form>
 
 {% endblock %}

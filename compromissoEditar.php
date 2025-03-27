@@ -16,11 +16,11 @@ if ($_SERVER['REQUEST_METHOD']=="GET"){
     $newdata = $_POST['newdata'] ?? null;
 
     if ($id) {
-        $query = $pdo->prepare('UPDATE compromisso SET titulo = :new, data = :newdata WHERE ID = :id;
+        $query = $pdo->prepare('UPDATE compromissos SET titulo = :newtitulo, data = :newdata WHERE ID = :id;
     ');
 
         $query->bindValue(':id', $id);
-        $query->bindValue(':newtitlo', $newtitulo);
+        $query->bindValue(':newtitulo', $newtitulo);
         $query->bindValue(':newdata', $newdata);
 
         $query->execute();
