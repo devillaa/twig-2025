@@ -4,7 +4,7 @@ require('inc/banco.php');
 
 $id = $_GET['id'] ?? null;
 
-if ($id) {
+if ($id && is_numeric($id)) {
     $query = $pdo->prepare('DELETE FROM compras WHERE ID = :id');
 
     $query->bindValue(':id',$id);

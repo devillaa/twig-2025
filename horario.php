@@ -5,8 +5,8 @@ date_default_timezone_set('America/Sao_paulo');
 use Carbon\Carbon;
 
 
-$hoje = Carbon::now()->format("y-m-d");
-$amanha = Carbon::now()->addDay(1)->format("y-m-d");
+$hoje = Carbon::now()->format("d-m-y");
+$amanha = Carbon::now()->addDay(1)->format("d-m-y");
 
 
 echo $twig->render('horario.html',[

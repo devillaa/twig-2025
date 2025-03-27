@@ -37,3 +37,8 @@ if(Carbon::now()->isWeekend()){
 } else {
     echo 'No hay festa';
 }
+
+$data_aleatoria = '2024-10-10';
+$data = Carbon::parse($data_aleatoria);
+echo '<br>';
+echo $data->day;
