@@ -10,12 +10,13 @@ use Carbon\Carbon;
 $titulo = $_POST['titulo'] ?? null;
 $d = $_POST['data'] ?? null;
 $data = Carbon::parse($d, null, true);
+$data->format('d,m,y');
 
 if ($titulo && $data->isValid()) {
     $query = $pdo->prepare('INSERT INTO compromissos (titulo, data) VALUES (:titulo,:data)');
 
     $query->bindValue(':titulo', $titulo);
-    $query->bindValue(':data', $data->toDateTimeString());
+    $query->bindValue(':data', $data);
 
     $query->execute();
 

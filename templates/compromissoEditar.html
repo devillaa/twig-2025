@@ -5,8 +5,8 @@
 
     <form action="compromissoEditar.php" method="post">
         <input type="hidden" name="id" value="{{ id }}">
-        <input type="text" name="newtitulo" placeholder="Digite o novo título do compromisso">
-        <input type="date" name="newdata" value="{{data}}">
+        <input type="text" name="newtitulo" value="{{editando.titulo}}" placeholder="Digite o novo título do compromisso">
+        <input type="date" name="newdata" value="{{editando.data}}">
         <button type="submit">Confirmar edição</button>
     </form>
 
