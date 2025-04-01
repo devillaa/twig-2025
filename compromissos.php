@@ -4,7 +4,13 @@ require_once('twig_carregar.php');
 require_once('inc/banco.php');
 
 
-$dados = $pdo->query('SELECT * FROM compromissos');
+$ordem = $_GET['ordem'] ?? null;
+
+if($ordem == 'maisrecente'){
+    $dados = $pdo->query('SELECT * FROM compromissos ORDER BY DATA asc');
+} else {
+    $dados = $pdo->query('SELECT * FROM compromissos ORDER BY DATA desc');
+} 
 
 $compromissos = $dados->fetchAll(PDO::FETCH_ASSOC);
 
