@@ -3,6 +3,8 @@
 require_once('twig_carregar.php');
 require_once('inc/banco.php');
 
+session_start();
+
 if (isset($_SESSION['usuario'])) {
     $dados = $pdo->query('SELECT * FROM compras');
 
