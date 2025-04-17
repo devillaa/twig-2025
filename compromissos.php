@@ -3,6 +3,7 @@
 require_once('twig_carregar.php');
 require_once('inc/banco.php');
 session_start();
+$usuario = $_SESSION['usuario'];
 
 if (isset($_SESSION['usuario'])){
     $ordem = $_GET['ordem'] ?? null;
@@ -19,6 +20,7 @@ if (isset($_SESSION['usuario'])){
     echo $twig->render('compromissos.html',[
         'titulo' => 'Lista de Compromissos',
         'compromissos' => $compromissos,
+        'usuario' => $usuario,
     ]);
 } else {
     header('location:login.php');

@@ -1,19 +1,27 @@
-{% block conteudo %} 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+</head>
+<body>
+    
+    <h1>Registar usuário</h1>
 
-<h1>Registar usuário</h1>
+    <form action="verificaRegistro.php" method="POST">
 
-<form action="verificaRegistro.php" method="POST">
+    <label for="usuario">Usuário</label>
+    <input type="text" name="usuario" id="usuario" placeholder="Usuario:"> <br>
+    <br>
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" placeholder="Senha:"> <br>
+    <br>
+    <button type="submit">Registar-se</button>
 
-<label for="usuario">Usuário</label>
-<input type="text" name="usuario" id="usuario" placeholder="Usuario:"> <br>
-<br>
-<label for="senha">Senha</label>
-<input type="password" name="senha" id="senha" placeholder="Senha:"> <br>
-<br>
-<button type="submit">Registar-se</button>
+    </form>
 
-</form>
+    <a href="login.php">Voltar para a página de login</a>
 
-<a href="login.php">Voltar para a página de login</a>
-
-{% endblock %}
+</body>
+</html>

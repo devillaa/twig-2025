@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block conteudo %}
+
+<h1>{{teste}}</h1>
+
+    <form action="trocasenha.php" method="POST">
+        <label for="novasenha">Nova Senha:</label> <br> <br>
+        <input type="text" id="novasenha" name="novasenha" placeholder="Nova Senha"> <br> <br>
+        <button type="submit">Trocar Senha!</button>
+    </form>
+
+
+{% endblock %}

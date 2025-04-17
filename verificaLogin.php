@@ -9,7 +9,7 @@ $senha = $_POST['senha'] ?? null;
 
 if (isset($login) && isset($senha)) {
     
-    $query = $pdo->prepare('SELECT usuario, senha FROM usuarios WHERE usuario = :usuario');
+    $query = $pdo->prepare('SELECT usuario, senha, id FROM usuarios WHERE usuario = :usuario');
     $query->bindValue(':usuario', $login);
     $query->execute();
 
@@ -18,10 +18,13 @@ if (isset($login) && isset($senha)) {
     if ($user && password_verify($senha, $user['senha'])) {
         
         $_SESSION['usuario'] = $user['usuario'];
+        $_SESSION['id'] = $user['id'];
 
         header('Location: index.php');
         
     } else {
-        echo "Usuário ou senha incorretos.";
+        $erro = urlencode('Usuário ou senha incorreto!');
+        header("Location: login.php?erro=$erro");
+        exit;
     }
 }

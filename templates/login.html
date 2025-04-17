@@ -1,18 +1,27 @@
-{% block conteudo %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    
+    <h1>Login</h1>
 
-<h1>Login</h1>
+    <form action="verificaLogin.php" method="POST">
 
-<form action="verificaLogin.php" method="POST">
+    <label for="login">Login</label>
+    <input type="text" id="login" name="login" placeholder="Login: "> <br>
+    <br>
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" placeholder="Senha: "> <br>
+    <p>{{erro}}</p>
+    <button type="submit">Logar</button>
+    
+    </form>
+    <br>
+    <a href="registrar.php">Clique aqui para se registrar!</a>
 
-<label for="login">Login</label>
-<input type="text" id="login" name="login" placeholder="Login: "> <br>
-<br>
-<label for="senha">Senha</label>
-<input type="password" id="senha" name="senha" placeholder="Senha: "> <br>
-<br>
-<button type="submit">Logar</button>
-</form>
-
-<a href="registrar.php">Clique aqui para se registrar!</a>
-
-{% endblock %}
+</body>
+</html>
