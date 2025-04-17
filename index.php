@@ -8,6 +8,7 @@ $usuario = $_SESSION['usuario'];
 if (isset($_SESSION['usuario'])){
 
     echo $twig->render('index.html', [
+        'titulo' => 'Inicial',
         'fruta' => 'Abacaxi',
         'usuario' => $usuario,
     ]);
