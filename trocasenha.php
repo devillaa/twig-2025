@@ -8,11 +8,14 @@ if ($_SERVER['REQUEST_METHOD']=="GET"){
 
     $usuario = $_SESSION['usuario'];
 
-    echo $twig->render('trocasenha.html', [
-        'titulo' => 'Trocar senha',
-        'usuario' => $usuario,
-    ]);
-
+    if (isset($_SESSION['usuario'])){
+        echo $twig->render('trocasenha.html', [
+            'titulo' => 'Trocar senha',
+            'usuario' => $usuario,
+        ]);   
+    }else{
+        header("location:login.php");
+    }
 
 } else {
 
