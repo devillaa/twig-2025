@@ -3,9 +3,10 @@
 require_once('twig_carregar.php');
 require_once('inc/banco.php');
 session_start();
-$usuario = $_SESSION['usuario'];
 
 if (isset($_SESSION['usuario'])){
+    $usuario = $_SESSION['usuario'];
+
     $ordem = $_GET['ordem'] ?? null;
 
     if($ordem == 'maisrecente'){
@@ -24,4 +25,5 @@ if (isset($_SESSION['usuario'])){
     ]);
 } else {
     header('location:login.php');
+    exit;
 }

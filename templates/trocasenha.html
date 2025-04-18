@@ -5,10 +5,18 @@
 <h1>{{teste}}</h1>
 
     <form action="trocasenha.php" method="POST">
-        <label for="novasenha">Nova Senha:</label> <br> <br>
+        <label for="senhaatual">Senha Atual:</label> <br>
+        <input type="text" name="senhaatual" name="senhaatual" placeholder="Digite sua senha"> <br> <br>
+        
+        <label for="novasenha">Nova Senha:</label> <br> 
         <input type="text" id="novasenha" name="novasenha" placeholder="Nova Senha"> <br> <br>
+        
+        <label for="confirmarsenha">Confirme a Senha:</label> <br>
+        <input type="text" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme a senha"> <br> <br>
+
         <button type="submit">Trocar Senha!</button>
     </form>
 
+    <p>{{erro}}</p>
 
 {% endblock %}

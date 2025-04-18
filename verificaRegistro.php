@@ -11,16 +11,17 @@ $usuario = $_POST['usuario'] ?? null;
 
 foreach($usuarios as $user){
     if($user['usuario'] == $usuario){
-        header('location:registrar.php');
+        $erro = 'Usuário já cadastrado!';
+        header("location:registrar.php?erro=$erro");
         exit;
     }
 }
 
-if(isset($_POST['senha'])){
-    $senha = password_hash($_POST['senha'],PASSWORD_DEFAULT );    
-}
+$senha = $_POST['senha'] ?? null;
 
-if(isset($usuario) && isset($senha)){
+if($usuario!= '' && $senha!=''){
+    $senha = password_hash($_POST['senha'],PASSWORD_DEFAULT );  
+    
     $query = $pdo->prepare('INSERT INTO usuarios (usuario,senha) VALUES (:usuario,:senha)');
 
     $query->bindValue(':usuario', $usuario);
@@ -28,7 +29,9 @@ if(isset($usuario) && isset($senha)){
 
     $query->execute();
 
-    header('location:login.php');
+    $erro = 'Registrado com sucesso!';
+    header("location:login.php?erro=$erro");
 } else {
-    header('location:registrar.php');
+    $erro = 'Preencha todos os campos!';
+    header("location:registrar.php?erro=$erro");
 }

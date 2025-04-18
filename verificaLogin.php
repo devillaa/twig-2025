@@ -17,13 +17,14 @@ if (isset($login) && isset($senha)) {
 
     if ($user && password_verify($senha, $user['senha'])) {
         
-        $_SESSION['usuario'] = $user['usuario'];
         $_SESSION['id'] = $user['id'];
+        $_SESSION['usuario'] = $user['usuario']; 
+        $_SESSION['senha'] = $user['senha'];
 
         header('Location: index.php');
         
     } else {
-        $erro = urlencode('Usuário ou senha incorreto!');
+        $erro = 'Usuário ou senha incorreto!';
         header("Location: login.php?erro=$erro");
         exit;
     }

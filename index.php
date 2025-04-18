@@ -3,9 +3,10 @@
 require_once('twig_carregar.php');
 session_start();
 
-$usuario = $_SESSION['usuario'];
+
 
 if (isset($_SESSION['usuario'])){
+    $usuario = $_SESSION['usuario'];
 
     echo $twig->render('index.html', [
         'titulo' => 'Inicial',
@@ -15,4 +16,5 @@ if (isset($_SESSION['usuario'])){
 
 } else {
     header('location:login.php');
+    exit;
 }
